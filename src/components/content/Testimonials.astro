@@ -1,0 +1,130 @@
+---
+import Polka from "@components/base/Polka.astro";
+import Card from "@components/base/Card.astro";
+---
+
+<div x-cloak class="relative overflow-hidden" x-intersect="activeStep = ''">
+  <div x-data="swiper()" class="carousel-container">
+    <div class="carousel-controls flex items-center justify-end mb-4">
+      <button class="w-10 h-10 flex items-center justify-center rounded-xl text-muted-600 hover:text-primary-600 dark:text-muted-300 dark:hover:text-muted-100 hover:bg-muted-200 dark:hover:bg-muted-900 transition-colors duration-300" @click="swiper.slidePrev()">
+        <iconify-icon class="iconify" icon="lucide:arrow-left"></iconify-icon>
+      </button>
+
+      <button class="w-10 h-10 flex items-center justify-center rounded-xl text-muted-600 hover:text-primary-600 dark:text-muted-300 dark:hover:text-muted-100 hover:bg-muted-200 dark:hover:bg-muted-900 transition-colors duration-300" @click="swiper.slideNext()">
+        <iconify-icon class="iconify" icon="lucide:arrow-right"></iconify-icon>
+      </button>
+    </div>
+    <div class="swiper-container" x-ref="container">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <Card class="'p-6'">
+            <div class="w-full flex flex-col gap-8 font-sans">
+              <iconify-icon class="iconify w-8 h-8 text-3xl text-primary-600 dark:text-rose-500" icon="fa6-solid:quote-left"></iconify-icon>
+              <p class="text-muted-500 dark:text-muted-300">
+                "Curar a veces, aliviar a menudo, consolar siempre." — Edward Livingston Trudeau
+              </p>
+              <div class="w-full flex items-center gap-3">
+                <img src="https://media.cssninja.io/shuriken/avatars/3.svg" class="w-10 h-10 rounded-full shadow-sm" alt="User image" />
+                <div>
+                  <h4 class="font-medium text-sm text-muted-800 dark:text-muted-100">Edward L. Trudeau</h4>
+                  <p class="text-xs text-muted-400">Estados Unidos</p>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <Card class="'p-6'">
+            <div class="w-full flex flex-col gap-8 font-sans">
+              <iconify-icon class="iconify w-8 h-8 text-3xl text-primary-600 dark:text-rose-500" icon="fa6-solid:quote-left"></iconify-icon>
+              <p class="text-muted-500 dark:text-muted-300">
+                "La medicina es una ciencia de la incertidumbre y un arte de la probabilidad." — William Osler
+              </p>
+              <div class="w-full flex items-center gap-3">
+                <img src="https://media.cssninja.io/shuriken/avatars/2.svg" class="w-10 h-10 rounded-full shadow-sm" alt="User image" />
+                <div>
+                  <h4 class="font-medium text-sm text-muted-800 dark:text-muted-100">William Osler</h4>
+                  <p class="text-xs text-muted-400">Canadá</p>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <Card class="'p-6'">
+            <div class="w-full flex flex-col gap-8 font-sans">
+              <iconify-icon class="iconify w-8 h-8 text-3xl text-primary-600 dark:text-rose-500" icon="fa6-solid:quote-left"></iconify-icon>
+              <p class="text-muted-500 dark:text-muted-300">
+                "Cuidar a un niño es sembrar esperanza en el alma del mundo." — Anónimo
+              </p>
+              <div class="w-full flex items-center gap-3">
+                <img src="https://media.cssninja.io/shuriken/avatars/10.svg" class="w-10 h-10 rounded-full shadow-sm" alt="User image" />
+                <div>
+                  <h4 class="font-medium text-sm text-muted-800 dark:text-muted-100">Anónimo</h4>
+                  <p class="text-xs text-muted-400">Desconocido</p>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <Card class="'p-6'">
+            <div class="w-full flex flex-col gap-8 font-sans">
+              <iconify-icon class="iconify w-8 h-8 text-3xl text-primary-600 dark:text-rose-500" icon="fa6-solid:quote-left"></iconify-icon>
+              <p class="text-muted-500 dark:text-muted-300">
+                "Cada niño que curamos es una oportunidad para cambiar el futuro." — Dr. José A. Cordero
+              </p>
+              <div class="w-full flex items-center gap-3">
+                <img src="https://media.cssninja.io/shuriken/avatars/9.svg" class="w-10 h-10 rounded-full shadow-sm" alt="User image" />
+                <div>
+                  <h4 class="font-medium text-sm text-muted-800 dark:text-muted-100">Dr. José A. Cordero</h4>
+                  <p class="text-xs text-muted-400">Puerto Rico</p>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+        <!-- Slide 5 -->
+        <div class="swiper-slide">
+          <Card class="'p-6'">
+            <div class="w-full flex flex-col gap-8 font-sans">
+              <iconify-icon class="iconify w-8 h-8 text-3xl text-primary-600 dark:text-rose-500" icon="fa6-solid:quote-left"></iconify-icon>
+              <p class="text-muted-500 dark:text-muted-300">
+                "La salud no lo es todo, pero sin ella, todo lo demás es nada." — Arthur Schopenhauer
+              </p>
+              <div class="w-full flex items-center gap-3">
+                <img src="https://media.cssninja.io/shuriken/avatars/11.svg" class="w-10 h-10 rounded-full shadow-sm" alt="User image" />
+                <div>
+                  <h4 class="font-medium text-sm text-muted-800 dark:text-muted-100">Arthur Schopenhauer</h4>
+                  <p class="text-xs text-muted-400">Alemania</p>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+        <!-- Slide 6 -->
+        <div class="swiper-slide">
+          <Card class="'p-6'">
+            <div class="w-full flex flex-col gap-8 font-sans">
+              <iconify-icon class="iconify w-8 h-8 text-3xl text-primary-600 dark:text-rose-500" icon="fa6-solid:quote-left"></iconify-icon>
+              <p class="text-muted-500 dark:text-muted-300">
+                "El buen médico trata la enfermedad; el gran médico trata al paciente que tiene la enfermedad." — William Osler
+              </p>
+              <div class="w-full flex items-center gap-3">
+                <img src="https://media.cssninja.io/shuriken/avatars/16.svg" class="w-10 h-10 rounded-full shadow-sm" alt="User image" />
+                <div>
+                  <h4 class="font-medium text-sm text-muted-800 dark:text-muted-100">William Osler</h4>
+                  <p class="text-xs text-muted-400">Canadá</p>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

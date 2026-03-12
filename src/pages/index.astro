@@ -1,193 +1,625 @@
 ---
 import Layout from "@layouts/Default.astro";
-import ButtonMain from "@components/base/ButtonMain.astro";
-import HeroMain from "@components/hero/HeroMain.astro";
-import SectionMuted from "@components/section/SectionMuted.astro";
-import Container from "@components/section/Container.astro";
-import SectionTitle from "@components/section/SectionTitle.astro";
-import IconBlock from "@components/content/IconBlock.astro";
-import Toolbar from "@components/content/doctors/grid/Toolbar.astro";
-import Filters from "@components/content/doctors/grid/Filters.astro";
-import Grid from "@components/content/doctors/grid/Grid.astro";
-import SideStatsRight from "@components/content/features/SideStatsRight.astro";
-import SideStatsLeft from "@components/content/features/SideStatsLeft.astro";
-import Pricing from "@components/content/Pricing.astro";
-import Cta from "@components/content/Cta.astro";
-import Testimonials from "@components/content/Testimonials.astro";
 ---
 
-<Layout title="Home">
-  <HeroMain />
+<Layout title="Portfolio">
+  <!-- ===================== HERO ===================== -->
+  <section class="relative min-h-screen w-full overflow-hidden bg-muted-100 dark:bg-muted-1000 flex items-center">
+    <div class="w-full max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-12 items-center gap-8 py-20 lg:py-0 min-h-screen">
+        <!-- Text -->
+        <div class="col-span-12 lg:col-span-5 flex flex-col gap-6 text-center lg:text-left">
+          <div class="inline-flex items-center justify-center lg:justify-start gap-2">
+            <img src="/img/logo/logo.png" alt="Logo" class="w-10 h-10 rounded-xl shadow-md" />
+            <span class="font-sans text-sm font-semibold tracking-widest uppercase text-primary-500">
+              IPS Pediatric
+            </span>
+          </div>
+          <h1 class="font-heading font-medium text-5xl lg:text-6xl text-muted-800 dark:text-white leading-tight">
+            Pediatric<br />
+            <span class="text-primary-500">Health</span> and Care
+          </h1>
+          <p class="font-sans text-lg text-muted-500 dark:text-muted-400 max-w-lg mx-auto lg:mx-0">
+            Proporcionamos una atención médica especializada y personalizada,
+            enfocada en el bienestar integral de nuestros pacientes a lo largo
+            de todas las etapas de la vida.
+          </p>
+          <div class="flex items-center justify-center lg:justify-start gap-4 mt-2">
+            <a
+              href="#servicios"
+              class="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white font-sans font-medium text-sm px-6 py-3 rounded-xl transition-colors duration-300 shadow-lg shadow-primary-500/30"
+            >
+              Ver servicios
+              <iconify-icon class="iconify w-4 h-4" icon="lucide:arrow-down"></iconify-icon>
+            </a>
+            <a
+              href="#nosotros"
+              class="inline-flex items-center gap-2 text-muted-600 dark:text-muted-300 hover:text-primary-500 dark:hover:text-primary-400 font-sans font-medium text-sm transition-colors duration-300"
+            >
+              Sobre nosotros
+              <iconify-icon class="iconify w-4 h-4" icon="lucide:arrow-right"></iconify-icon>
+            </a>
+          </div>
+          <!-- Trust badges -->
+          <div class="flex items-center justify-center lg:justify-start gap-6 mt-4">
+            <div class="flex flex-col items-center lg:items-start">
+              <span class="font-heading font-semibold text-2xl text-muted-800 dark:text-white">12+</span>
+              <span class="font-sans text-xs text-muted-400">Especialidades</span>
+            </div>
+            <div class="w-px h-8 bg-muted-200 dark:bg-muted-700"></div>
+            <div class="flex flex-col items-center lg:items-start">
+              <span class="font-heading font-semibold text-2xl text-muted-800 dark:text-white">Alta</span>
+              <span class="font-sans text-xs text-muted-400">Complejidad</span>
+            </div>
+            <div class="w-px h-8 bg-muted-200 dark:bg-muted-700"></div>
+            <div class="flex flex-col items-center lg:items-start">
+              <span class="font-heading font-semibold text-2xl text-muted-800 dark:text-white">100%</span>
+              <span class="font-sans text-xs text-muted-400">Calidad</span>
+            </div>
+          </div>
+        </div>
 
-  <SectionMuted>
-    <Container>
-      <SectionTitle
-        title="Brindamos servicios de salud "
-        subtitle="especializados de mediana y alta complejidad a niños, niñas, adolescentes y población en general, con un enfoque centrado en el usuario y su familia. Contamos con un equipo humano competente y comprometido con la calidad, seguridad, eficiencia y humanización, promoviendo la prevención, el desarrollo sostenible y la mejora continua de la calidad de vida."
-        minititle="Misión"
-      />
-
-      <div id="servicios" class="grid md:grid-cols-3 ltablet:grid-cols-4 lg:grid-cols-4 gap-x-6 gap-y-12" x-intersect="activeStep = ''">
-        <!-- Medicina General -->
-        <div>
-          <IconBlock
-            title="Medicina General"
-            text="Atención integral para prevenir, diagnosticar y tratar enfermedades frecuentes en todas las etapas de la vida."
-            icon="ph:stethoscope-duotone"
-            class="'text-primary-600'"
-          />
-        </div>
-      
-        <!-- Enfermería -->
-        <div>
-          <IconBlock
-            title="Enfermería"
-            text="Cuidados básicos y especializados, apoyo terapéutico y promoción de la salud con enfoque humano."
-            icon="ph:heart-duotone"
-            class="'text-rose-500'"
-          />
-        </div>
-      
-        <!-- Nutrición y Dieta -->
-        <div>
-          <IconBlock
-            title="Nutrición y Dieta"
-            text="Asesoría nutricional para mejorar hábitos alimentarios y apoyar el tratamiento de condiciones clínicas."
-            icon="ph:apple-logo-duotone"
-            class="'text-primary-600'"
-          />
-        </div>
-      
-        <!-- Psicología -->
-        <div>
-          <IconBlock
-            title="Psicología"
-            text="Evaluación emocional y tratamiento de trastornos mentales con enfoque terapéutico y preventivo."
-            icon="ph:brain-duotone"
-            class="'text-rose-500'"
-          />
-        </div>
-      
-        <!-- Odontología -->
-        <div>
-          <IconBlock
-            title="Odontología"
-            text="Prevención, diagnóstico y tratamiento de enfermedades bucales en pacientes de todas las edades."
-            icon="ph:tooth-duotone"
-            class="'text-primary-600'"
-          />
-        </div>
-      
-        <!-- Pediatría -->
-        <div>
-          <IconBlock
-            title="Pediatría"
-            text="Atención especializada para niños y adolescentes, con enfoque en crecimiento y desarrollo saludable."
-            icon="ph:baby-duotone"
-            class="'text-primary-600'"
-          />
-        </div>
-      
-        <!-- Medicina Familiar -->
-        <div>
-          <IconBlock
-            title="Medicina Familiar"
-            text="Cuidado continuo e integral centrado en la persona y su entorno familiar, desde la prevención hasta el tratamiento."
-            icon="ph:house-duotone"
-            class="'text-primary-600'"
-          />
-        </div>
-      
-        <!-- Medicina Interna -->
-        <div>
-          <IconBlock
-            title="Medicina Interna"
-            text="Diagnóstico y manejo de enfermedades complejas en adultos, con enfoque clínico especializado."
-            icon="ph:clipboard-text-duotone"
-            class="'text-rose-500'"
-          />
-        </div>
-      
-        <!-- Medicina Laboral -->
-        <div>
-          <IconBlock
-            title="Medicina Laboral"
-            text="Promoción de la salud ocupacional, prevención de riesgos y seguimiento de condiciones laborales."
-            icon="ph:clipboard-text-duotone"
-            class="'text-primary-600'"
-          />
-        </div>
-      
-        <!-- Ginecobstetricia -->
-        <div>
-          <IconBlock
-            title="Ginecobstetricia"
-            text="Salud femenina integral, desde la adolescencia hasta la menopausia, con atención en embarazo y parto."
-            icon="ph:gender-female-duotone"
-            class="'text-rose-500'"
-          />
-        </div>
-      
-        <!-- Laboratorio Clínico -->
-        <div>
-          <IconBlock
-            title="Laboratorio Clínico"
-            text="Análisis confiables que apoyan el diagnóstico médico, con equipos modernos y personal capacitado."
-            icon="ph:test-tube-duotone"
-            class="'text-primary-600'"
+        <!-- Image -->
+        <div class="col-span-12 lg:col-span-7 relative">
+          <!-- Decorative floating badges -->
+          <div class="absolute top-6 left-4 z-20 h-14 w-14 hidden md:flex items-center justify-center rounded-full text-2xl bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/50">
+            💊
+          </div>
+          <div class="absolute top-24 left-28 z-20 h-10 w-10 hidden md:flex items-center justify-center rounded-full text-xl bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/50">
+            ⚕️
+          </div>
+          <div class="absolute -bottom-4 right-4 z-20 h-16 w-16 hidden md:flex items-center justify-center rounded-full text-3xl bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/50">
+            💉
+          </div>
+          <img
+            class="w-full object-cover mask mask-blob"
+            src="/img/img/4.png"
+            alt="Pediatric Health and Care"
+            width="720"
+            height="720"
           />
         </div>
       </div>
-      
+    </div>
+  </section>
 
-    </Container>
-  </SectionMuted>
+  <!-- ===================== MISSION / ABOUT ===================== -->
+  <section id="nosotros" class="py-20 bg-white dark:bg-muted-900">
+    <div class="w-full max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-12 items-center gap-12">
+        <!-- Text -->
+        <div class="col-span-12 lg:col-span-6 space-y-6">
+          <h4 class="font-sans font-semibold text-xs tracking-widest uppercase text-primary-500">
+            Misión
+          </h4>
+          <h2 class="font-heading font-medium text-4xl text-muted-800 dark:text-white leading-snug">
+            Brindamos servicios de salud
+            <span class="text-primary-500">especializados</span> de mediana y alta complejidad
+          </h2>
+          <p class="font-sans text-lg text-muted-500 dark:text-muted-400 leading-relaxed">
+            A niños, niñas, adolescentes y población en general, con un enfoque
+            centrado en el usuario y su familia.
+          </p>
+          <p class="font-sans text-base text-muted-500 dark:text-muted-400 leading-relaxed">
+            Contamos con un equipo humano competente y comprometido con la
+            calidad, seguridad, eficiencia y humanización, promoviendo la
+            prevención, el desarrollo sostenible y la mejora continua de la
+            calidad de vida.
+          </p>
+          <!-- Values pills -->
+          <div class="flex flex-wrap gap-3 pt-2">
+            {["Calidad", "Seguridad", "Eficiencia", "Humanización", "Prevención"].map((v) => (
+              <span class="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-sans font-medium bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 border border-primary-100 dark:border-primary-800">
+                {v}
+              </span>
+            ))}
+          </div>
+        </div>
 
-  <SectionMuted class="'border-b border-muted-200 dark:border-muted-800'">
-    <Container>
-      <SectionTitle
-        title="De contar con los mejores profesionales"
-        minititle="Ten la seguridad"
-        class="'mx-auto text-center'"
-      />
-
-      <div id="doctors" x-data="doctors()"  x-intersect="activeStep = 'spy-1'">
-
-        <!--Grid wrapper-->
-        <div class="py-10">
-            <!--Content-->
-            <div class="col-span-12 lg:col-span-9">
-              <!--Subgrid-->
-              <Grid />
+        <!-- Image -->
+        <div class="col-span-12 lg:col-span-6 relative">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-muted-300/30 dark:shadow-muted-900/50">
+            <img
+              src="/img/screens/doctors.png"
+              alt="Nuestro equipo"
+              class="w-full h-auto object-cover"
+            />
+          </div>
+          <!-- Floating stat card -->
+          <div class="absolute -bottom-6 -left-6 bg-white dark:bg-muted-800 rounded-2xl p-4 shadow-xl border border-muted-100 dark:border-muted-700 hidden lg:block">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center">
+                <iconify-icon class="iconify text-primary-500 text-xl" icon="ph:heart-duotone"></iconify-icon>
+              </div>
+              <div>
+                <p class="font-heading font-semibold text-muted-800 dark:text-white text-sm">Atención Integral</p>
+                <p class="font-sans text-xs text-muted-400">Centrada en el paciente</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </Container>
-  </SectionMuted>
+    </div>
+  </section>
 
-  <SectionMuted class="'overflow-hidden'">
-    <Container>
-      <div class="py-10">
-        <SideStatsRight />
-        <SideStatsLeft />
+  <!-- ===================== SERVICES ===================== -->
+  <section id="servicios" class="py-20 bg-muted-50 dark:bg-muted-1000">
+    <div class="w-full max-w-7xl mx-auto px-6 lg:px-10">
+      <!-- Section header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <h4 class="font-sans font-semibold text-xs tracking-widest uppercase text-primary-500">
+          Nuestros Servicios
+        </h4>
+        <h2 class="font-heading font-medium text-4xl text-muted-800 dark:text-white">
+          Atención médica completa para toda la familia
+        </h2>
+        <p class="font-sans text-base text-muted-500 dark:text-muted-400">
+          Ofrecemos una amplia gama de especialidades médicas con un enfoque
+          humanizado y centrado en tu bienestar.
+        </p>
       </div>
-    </Container>
-  </SectionMuted>
 
-  <SectionMuted>
-    <Container>
-      <SectionTitle
-        title="En Pediatric Health and Care creemos..."
-        minititle="Algunos de nuestros valores"
-        class="'mx-auto text-center'"
-      />
-      <Testimonials />
-    </Container>
-  </SectionMuted>
+      <!-- Services grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Medicina General -->
+        <div class="group bg-white dark:bg-muted-800 rounded-2xl p-6 border border-muted-100 dark:border-muted-700 hover:border-primary-200 dark:hover:border-primary-700 hover:shadow-lg hover:shadow-primary-500/10 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center mb-4 group-hover:bg-primary-100 dark:group-hover:bg-primary-900/50 transition-colors duration-300">
+            <iconify-icon class="iconify text-2xl text-primary-500" icon="ph:stethoscope-duotone"></iconify-icon>
+          </div>
+          <h3 class="font-heading font-semibold text-base text-muted-800 dark:text-white mb-2">Medicina General</h3>
+          <p class="font-sans text-sm text-muted-500 dark:text-muted-400 leading-relaxed">
+            Atención integral para prevenir, diagnosticar y tratar enfermedades frecuentes en todas las etapas de la vida.
+          </p>
+        </div>
 
-  <SectionMuted>
-    <Container>
-      <Cta />
-    </Container>
-  </SectionMuted>
+        <!-- Enfermería -->
+        <div class="group bg-white dark:bg-muted-800 rounded-2xl p-6 border border-muted-100 dark:border-muted-700 hover:border-rose-200 dark:hover:border-rose-700 hover:shadow-lg hover:shadow-rose-500/10 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-rose-50 dark:bg-rose-900/30 flex items-center justify-center mb-4 group-hover:bg-rose-100 dark:group-hover:bg-rose-900/50 transition-colors duration-300">
+            <iconify-icon class="iconify text-2xl text-rose-500" icon="ph:heart-duotone"></iconify-icon>
+          </div>
+          <h3 class="font-heading font-semibold text-base text-muted-800 dark:text-white mb-2">Enfermería</h3>
+          <p class="font-sans text-sm text-muted-500 dark:text-muted-400 leading-relaxed">
+            Cuidados básicos y especializados, apoyo terapéutico y promoción de la salud con enfoque humano.
+          </p>
+        </div>
+
+        <!-- Nutrición y Dieta -->
+        <div class="group bg-white dark:bg-muted-800 rounded-2xl p-6 border border-muted-100 dark:border-muted-700 hover:border-primary-200 dark:hover:border-primary-700 hover:shadow-lg hover:shadow-primary-500/10 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center mb-4 group-hover:bg-primary-100 dark:group-hover:bg-primary-900/50 transition-colors duration-300">
+            <iconify-icon class="iconify text-2xl text-primary-500" icon="ph:apple-logo-duotone"></iconify-icon>
+          </div>
+          <h3 class="font-heading font-semibold text-base text-muted-800 dark:text-white mb-2">Nutrición y Dieta</h3>
+          <p class="font-sans text-sm text-muted-500 dark:text-muted-400 leading-relaxed">
+            Asesoría nutricional para mejorar hábitos alimentarios y apoyar el tratamiento de condiciones clínicas.
+          </p>
+        </div>
+
+        <!-- Psicología -->
+        <div class="group bg-white dark:bg-muted-800 rounded-2xl p-6 border border-muted-100 dark:border-muted-700 hover:border-rose-200 dark:hover:border-rose-700 hover:shadow-lg hover:shadow-rose-500/10 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-rose-50 dark:bg-rose-900/30 flex items-center justify-center mb-4 group-hover:bg-rose-100 dark:group-hover:bg-rose-900/50 transition-colors duration-300">
+            <iconify-icon class="iconify text-2xl text-rose-500" icon="ph:brain-duotone"></iconify-icon>
+          </div>
+          <h3 class="font-heading font-semibold text-base text-muted-800 dark:text-white mb-2">Psicología</h3>
+          <p class="font-sans text-sm text-muted-500 dark:text-muted-400 leading-relaxed">
+            Evaluación emocional y tratamiento de trastornos mentales con enfoque terapéutico y preventivo.
+          </p>
+        </div>
+
+        <!-- Odontología -->
+        <div class="group bg-white dark:bg-muted-800 rounded-2xl p-6 border border-muted-100 dark:border-muted-700 hover:border-primary-200 dark:hover:border-primary-700 hover:shadow-lg hover:shadow-primary-500/10 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center mb-4 group-hover:bg-primary-100 dark:group-hover:bg-primary-900/50 transition-colors duration-300">
+            <iconify-icon class="iconify text-2xl text-primary-500" icon="ph:tooth-duotone"></iconify-icon>
+          </div>
+          <h3 class="font-heading font-semibold text-base text-muted-800 dark:text-white mb-2">Odontología</h3>
+          <p class="font-sans text-sm text-muted-500 dark:text-muted-400 leading-relaxed">
+            Prevención, diagnóstico y tratamiento de enfermedades bucales en pacientes de todas las edades.
+          </p>
+        </div>
+
+        <!-- Pediatría -->
+        <div class="group bg-white dark:bg-muted-800 rounded-2xl p-6 border border-muted-100 dark:border-muted-700 hover:border-primary-200 dark:hover:border-primary-700 hover:shadow-lg hover:shadow-primary-500/10 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center mb-4 group-hover:bg-primary-100 dark:group-hover:bg-primary-900/50 transition-colors duration-300">
+            <iconify-icon class="iconify text-2xl text-primary-500" icon="ph:baby-duotone"></iconify-icon>
+          </div>
+          <h3 class="font-heading font-semibold text-base text-muted-800 dark:text-white mb-2">Pediatría</h3>
+          <p class="font-sans text-sm text-muted-500 dark:text-muted-400 leading-relaxed">
+            Atención especializada para niños y adolescentes, con enfoque en crecimiento y desarrollo saludable.
+          </p>
+        </div>
+
+        <!-- Medicina Familiar -->
+        <div class="group bg-white dark:bg-muted-800 rounded-2xl p-6 border border-muted-100 dark:border-muted-700 hover:border-primary-200 dark:hover:border-primary-700 hover:shadow-lg hover:shadow-primary-500/10 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center mb-4 group-hover:bg-primary-100 dark:group-hover:bg-primary-900/50 transition-colors duration-300">
+            <iconify-icon class="iconify text-2xl text-primary-500" icon="ph:house-duotone"></iconify-icon>
+          </div>
+          <h3 class="font-heading font-semibold text-base text-muted-800 dark:text-white mb-2">Medicina Familiar</h3>
+          <p class="font-sans text-sm text-muted-500 dark:text-muted-400 leading-relaxed">
+            Cuidado continuo e integral centrado en la persona y su entorno familiar, desde la prevención hasta el tratamiento.
+          </p>
+        </div>
+
+        <!-- Medicina Interna -->
+        <div class="group bg-white dark:bg-muted-800 rounded-2xl p-6 border border-muted-100 dark:border-muted-700 hover:border-rose-200 dark:hover:border-rose-700 hover:shadow-lg hover:shadow-rose-500/10 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-rose-50 dark:bg-rose-900/30 flex items-center justify-center mb-4 group-hover:bg-rose-100 dark:group-hover:bg-rose-900/50 transition-colors duration-300">
+            <iconify-icon class="iconify text-2xl text-rose-500" icon="ph:clipboard-text-duotone"></iconify-icon>
+          </div>
+          <h3 class="font-heading font-semibold text-base text-muted-800 dark:text-white mb-2">Medicina Interna</h3>
+          <p class="font-sans text-sm text-muted-500 dark:text-muted-400 leading-relaxed">
+            Diagnóstico y manejo de enfermedades complejas en adultos, con enfoque clínico especializado.
+          </p>
+        </div>
+
+        <!-- Medicina Laboral -->
+        <div class="group bg-white dark:bg-muted-800 rounded-2xl p-6 border border-muted-100 dark:border-muted-700 hover:border-primary-200 dark:hover:border-primary-700 hover:shadow-lg hover:shadow-primary-500/10 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center mb-4 group-hover:bg-primary-100 dark:group-hover:bg-primary-900/50 transition-colors duration-300">
+            <iconify-icon class="iconify text-2xl text-primary-500" icon="ph:briefcase-duotone"></iconify-icon>
+          </div>
+          <h3 class="font-heading font-semibold text-base text-muted-800 dark:text-white mb-2">Medicina Laboral</h3>
+          <p class="font-sans text-sm text-muted-500 dark:text-muted-400 leading-relaxed">
+            Promoción de la salud ocupacional, prevención de riesgos y seguimiento de condiciones laborales.
+          </p>
+        </div>
+
+        <!-- Ginecobstetricia -->
+        <div class="group bg-white dark:bg-muted-800 rounded-2xl p-6 border border-muted-100 dark:border-muted-700 hover:border-rose-200 dark:hover:border-rose-700 hover:shadow-lg hover:shadow-rose-500/10 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-rose-50 dark:bg-rose-900/30 flex items-center justify-center mb-4 group-hover:bg-rose-100 dark:group-hover:bg-rose-900/50 transition-colors duration-300">
+            <iconify-icon class="iconify text-2xl text-rose-500" icon="ph:gender-female-duotone"></iconify-icon>
+          </div>
+          <h3 class="font-heading font-semibold text-base text-muted-800 dark:text-white mb-2">Ginecobstetricia</h3>
+          <p class="font-sans text-sm text-muted-500 dark:text-muted-400 leading-relaxed">
+            Salud femenina integral, desde la adolescencia hasta la menopausia, con atención en embarazo y parto.
+          </p>
+        </div>
+
+        <!-- Laboratorio Clínico -->
+        <div class="group bg-white dark:bg-muted-800 rounded-2xl p-6 border border-muted-100 dark:border-muted-700 hover:border-primary-200 dark:hover:border-primary-700 hover:shadow-lg hover:shadow-primary-500/10 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center mb-4 group-hover:bg-primary-100 dark:group-hover:bg-primary-900/50 transition-colors duration-300">
+            <iconify-icon class="iconify text-2xl text-primary-500" icon="ph:eyedropper-duotone"></iconify-icon>
+          </div>
+          <h3 class="font-heading font-semibold text-base text-muted-800 dark:text-white mb-2">Laboratorio Clínico</h3>
+          <p class="font-sans text-sm text-muted-500 dark:text-muted-400 leading-relaxed">
+            Análisis confiables que apoyan el diagnóstico médico, con equipos modernos y personal capacitado.
+          </p>
+        </div>
+
+        <!-- Medicina General placeholder for even grid -->
+        <div class="group bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl p-6 border border-primary-400 hover:shadow-lg hover:shadow-primary-500/30 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <iconify-icon class="iconify text-3xl text-white/80 mb-4 block" icon="ph:phone-duotone"></iconify-icon>
+            <h3 class="font-heading font-semibold text-base text-white mb-2">¿Necesitas otra especialidad?</h3>
+            <p class="font-sans text-sm text-white/80 leading-relaxed">
+              Contáctanos y nuestro equipo te orientará hacia el especialista que necesitas.
+            </p>
+          </div>
+          <a href="#cta" class="mt-4 inline-flex items-center gap-2 text-white font-sans text-sm font-medium hover:gap-3 transition-all duration-300">
+            Contáctanos
+            <iconify-icon class="iconify w-4 h-4" icon="lucide:arrow-right"></iconify-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TEAM ===================== -->
+  <section class="py-20 bg-white dark:bg-muted-900">
+    <div class="w-full max-w-7xl mx-auto px-6 lg:px-10">
+      <!-- Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <h4 class="font-sans font-semibold text-xs tracking-widest uppercase text-primary-500">
+          Ten la seguridad
+        </h4>
+        <h2 class="font-heading font-medium text-4xl text-muted-800 dark:text-white">
+          De contar con los mejores profesionales
+        </h2>
+        <p class="font-sans text-base text-muted-500 dark:text-muted-400">
+          Nuestro equipo de especialistas está comprometido con tu salud y
+          bienestar, brindando atención de calidad en cada consulta.
+        </p>
+      </div>
+
+      <!-- Doctors grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((n) => (
+          <div class="group bg-muted-50 dark:bg-muted-800 rounded-2xl p-4 border border-muted-100 dark:border-muted-700 hover:border-primary-200 dark:hover:border-primary-700 hover:shadow-md transition-all duration-300">
+            <div class="relative h-32 rounded-xl bg-muted-100 dark:bg-muted-700 overflow-hidden">
+              <img
+                class="bottom-0 inset-x-0 mx-auto w-full max-w-[130px]"
+                src={`/img/illustrations/doctors/doctor-${n}.svg`}
+                alt={`Doctor ${n}`}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FACILITIES ===================== -->
+  <section class="py-20 bg-muted-50 dark:bg-muted-1000">
+    <div class="w-full max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-12 items-center gap-12">
+        <!-- Text -->
+        <div class="col-span-12 lg:col-span-5 space-y-6">
+          <h4 class="font-sans font-semibold text-xs tracking-widest uppercase text-primary-500">
+            Nuestras instalaciones
+          </h4>
+          <h2 class="font-heading font-medium text-4xl text-muted-800 dark:text-white leading-snug">
+            Contamos con una infraestructura
+            <span class="text-primary-500">calificada</span>
+          </h2>
+          <p class="font-sans text-lg text-muted-500 dark:text-muted-400 leading-relaxed">
+            Dotada de cómodas instalaciones, con consultorios debidamente
+            equipados, amplias y acogedoras salas de espera en nuestros puntos
+            de atención.
+          </p>
+          <a
+            href="#"
+            class="group inline-flex items-center gap-3 text-primary-500 hover:text-primary-400 transition-colors duration-300"
+          >
+            <span class="font-sans font-medium text-sm">Aprende un poco más</span>
+            <iconify-icon
+              class="iconify w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+              icon="lucide:arrow-right"
+            ></iconify-icon>
+          </a>
+          <!-- Feature list -->
+          <ul class="space-y-3 pt-2">
+            {[
+              "Consultorios debidamente equipados",
+              "Amplias salas de espera",
+              "Equipos de diagnóstico modernos",
+              "Múltiples puntos de atención",
+            ].map((item) => (
+              <li class="flex items-center gap-3">
+                <div class="w-5 h-5 rounded-full bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center flex-shrink-0">
+                  <iconify-icon class="iconify text-xs text-primary-500" icon="lucide:check"></iconify-icon>
+                </div>
+                <span class="font-sans text-sm text-muted-600 dark:text-muted-300">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Image -->
+        <div class="col-span-12 lg:col-span-7">
+          <div class="relative">
+            <div class="rounded-3xl overflow-hidden shadow-2xl shadow-muted-300/20 dark:shadow-muted-900/50">
+              <img
+                src="/img/img/4.png"
+                alt="Nuestras instalaciones"
+                class="w-full object-cover"
+              />
+            </div>
+            <!-- Overlay card -->
+            <div class="absolute -bottom-6 -right-6 bg-white dark:bg-muted-800 rounded-2xl p-4 shadow-xl border border-muted-100 dark:border-muted-700 hidden lg:block">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center">
+                  <iconify-icon class="iconify text-primary-500 text-xl" icon="ph:buildings-duotone"></iconify-icon>
+                </div>
+                <div>
+                  <p class="font-heading font-semibold text-muted-800 dark:text-white text-sm">Infraestructura Moderna</p>
+                  <p class="font-sans text-xs text-muted-400">Equipos de última generación</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PEDIATRIC CARE FEATURE ===================== -->
+  <section class="py-20 bg-white dark:bg-muted-900">
+    <div class="w-full max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-12 items-center gap-12">
+        <!-- Image -->
+        <div class="col-span-12 lg:col-span-7 order-last lg:order-first">
+          <div class="relative">
+            <div class="rounded-3xl overflow-hidden shadow-2xl shadow-muted-300/20 dark:shadow-muted-900/50">
+              <img
+                src="/img/img/2.png"
+                alt="Cuidados Pediátricos"
+                class="w-full object-cover"
+              />
+            </div>
+            <!-- Overlay card -->
+            <div class="absolute -bottom-6 -left-6 bg-white dark:bg-muted-800 rounded-2xl p-4 shadow-xl border border-muted-100 dark:border-muted-700 hidden lg:block">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-rose-50 dark:bg-rose-900/30 flex items-center justify-center">
+                  <iconify-icon class="iconify text-rose-500 text-xl" icon="ph:baby-duotone"></iconify-icon>
+                </div>
+                <div>
+                  <p class="font-heading font-semibold text-muted-800 dark:text-white text-sm">Atención Pediátrica</p>
+                  <p class="font-sans text-xs text-muted-400">Rápida, segura y humana</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="col-span-12 lg:col-span-5 space-y-6">
+          <h4 class="font-sans font-semibold text-xs tracking-widest uppercase text-primary-500">
+            Cuidados Pediátricos
+          </h4>
+          <h2 class="font-heading font-medium text-4xl text-muted-800 dark:text-white leading-snug">
+            Consulta con
+            <span class="text-primary-500">especialistas infantiles</span>
+          </h2>
+          <p class="font-sans text-lg text-muted-500 dark:text-muted-400 leading-relaxed">
+            Accede a orientación médica pediátrica desde casa para síntomas
+            comunes, control del desarrollo o dudas sobre vacunas. Rápido,
+            seguro y humano.
+          </p>
+          <a
+            href="#"
+            class="group inline-flex items-center gap-3 text-primary-500 hover:text-primary-400 transition-colors duration-300"
+          >
+            <span class="font-sans font-medium text-sm">Conoce más sobre nuestras consultas</span>
+            <iconify-icon
+              class="iconify w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+              icon="lucide:arrow-right"
+            ></iconify-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VALUES / QUOTES ===================== -->
+  <section class="py-20 bg-muted-50 dark:bg-muted-1000">
+    <div class="w-full max-w-7xl mx-auto px-6 lg:px-10">
+      <!-- Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <h4 class="font-sans font-semibold text-xs tracking-widest uppercase text-primary-500">
+          Algunos de nuestros valores
+        </h4>
+        <h2 class="font-heading font-medium text-4xl text-muted-800 dark:text-white">
+          En Pediatric Health and Care creemos...
+        </h2>
+      </div>
+
+      <!-- Quotes grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Quote 1 -->
+        <div class="bg-white dark:bg-muted-800 rounded-2xl p-8 border border-muted-100 dark:border-muted-700 flex flex-col gap-6">
+          <iconify-icon class="iconify w-8 h-8 text-3xl text-primary-500 dark:text-primary-400" icon="fa6-solid:quote-left"></iconify-icon>
+          <p class="font-sans text-muted-600 dark:text-muted-300 text-base leading-relaxed flex-1">
+            "Curar a veces, aliviar a menudo, consolar siempre."
+          </p>
+          <div class="flex items-center gap-3 pt-2 border-t border-muted-100 dark:border-muted-700">
+            <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center flex-shrink-0">
+              <iconify-icon class="iconify text-primary-500" icon="ph:user-duotone"></iconify-icon>
+            </div>
+            <div>
+              <h4 class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100">Edward L. Trudeau</h4>
+              <p class="font-sans text-xs text-muted-400">Estados Unidos</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote 2 -->
+        <div class="bg-white dark:bg-muted-800 rounded-2xl p-8 border border-muted-100 dark:border-muted-700 flex flex-col gap-6">
+          <iconify-icon class="iconify w-8 h-8 text-3xl text-primary-500 dark:text-primary-400" icon="fa6-solid:quote-left"></iconify-icon>
+          <p class="font-sans text-muted-600 dark:text-muted-300 text-base leading-relaxed flex-1">
+            "La medicina es una ciencia de la incertidumbre y un arte de la probabilidad."
+          </p>
+          <div class="flex items-center gap-3 pt-2 border-t border-muted-100 dark:border-muted-700">
+            <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center flex-shrink-0">
+              <iconify-icon class="iconify text-primary-500" icon="ph:user-duotone"></iconify-icon>
+            </div>
+            <div>
+              <h4 class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100">William Osler</h4>
+              <p class="font-sans text-xs text-muted-400">Canadá</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote 3 -->
+        <div class="bg-white dark:bg-muted-800 rounded-2xl p-8 border border-muted-100 dark:border-muted-700 flex flex-col gap-6">
+          <iconify-icon class="iconify w-8 h-8 text-3xl text-rose-500 dark:text-rose-400" icon="fa6-solid:quote-left"></iconify-icon>
+          <p class="font-sans text-muted-600 dark:text-muted-300 text-base leading-relaxed flex-1">
+            "Cuidar a un niño es sembrar esperanza en el alma del mundo."
+          </p>
+          <div class="flex items-center gap-3 pt-2 border-t border-muted-100 dark:border-muted-700">
+            <div class="w-10 h-10 rounded-full bg-rose-100 dark:bg-rose-900/40 flex items-center justify-center flex-shrink-0">
+              <iconify-icon class="iconify text-rose-500" icon="ph:user-duotone"></iconify-icon>
+            </div>
+            <div>
+              <h4 class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100">Anónimo</h4>
+              <p class="font-sans text-xs text-muted-400">Desconocido</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote 4 -->
+        <div class="bg-white dark:bg-muted-800 rounded-2xl p-8 border border-muted-100 dark:border-muted-700 flex flex-col gap-6">
+          <iconify-icon class="iconify w-8 h-8 text-3xl text-rose-500 dark:text-rose-400" icon="fa6-solid:quote-left"></iconify-icon>
+          <p class="font-sans text-muted-600 dark:text-muted-300 text-base leading-relaxed flex-1">
+            "Cada niño que curamos es una oportunidad para cambiar el futuro."
+          </p>
+          <div class="flex items-center gap-3 pt-2 border-t border-muted-100 dark:border-muted-700">
+            <div class="w-10 h-10 rounded-full bg-rose-100 dark:bg-rose-900/40 flex items-center justify-center flex-shrink-0">
+              <iconify-icon class="iconify text-rose-500" icon="ph:user-duotone"></iconify-icon>
+            </div>
+            <div>
+              <h4 class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100">Dr. José A. Cordero</h4>
+              <p class="font-sans text-xs text-muted-400">Puerto Rico</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote 5 -->
+        <div class="bg-white dark:bg-muted-800 rounded-2xl p-8 border border-muted-100 dark:border-muted-700 flex flex-col gap-6">
+          <iconify-icon class="iconify w-8 h-8 text-3xl text-primary-500 dark:text-primary-400" icon="fa6-solid:quote-left"></iconify-icon>
+          <p class="font-sans text-muted-600 dark:text-muted-300 text-base leading-relaxed flex-1">
+            "La salud no lo es todo, pero sin ella, todo lo demás es nada."
+          </p>
+          <div class="flex items-center gap-3 pt-2 border-t border-muted-100 dark:border-muted-700">
+            <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center flex-shrink-0">
+              <iconify-icon class="iconify text-primary-500" icon="ph:user-duotone"></iconify-icon>
+            </div>
+            <div>
+              <h4 class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100">Arthur Schopenhauer</h4>
+              <p class="font-sans text-xs text-muted-400">Alemania</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote 6 -->
+        <div class="bg-white dark:bg-muted-800 rounded-2xl p-8 border border-muted-100 dark:border-muted-700 flex flex-col gap-6">
+          <iconify-icon class="iconify w-8 h-8 text-3xl text-primary-500 dark:text-primary-400" icon="fa6-solid:quote-left"></iconify-icon>
+          <p class="font-sans text-muted-600 dark:text-muted-300 text-base leading-relaxed flex-1">
+            "El buen médico trata la enfermedad; el gran médico trata al paciente que tiene la enfermedad."
+          </p>
+          <div class="flex items-center gap-3 pt-2 border-t border-muted-100 dark:border-muted-700">
+            <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center flex-shrink-0">
+              <iconify-icon class="iconify text-primary-500" icon="ph:user-duotone"></iconify-icon>
+            </div>
+            <div>
+              <h4 class="font-sans font-semibold text-sm text-muted-800 dark:text-muted-100">William Osler</h4>
+              <p class="font-sans text-xs text-muted-400">Canadá</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section id="cta" class="py-20 bg-white dark:bg-muted-900">
+    <div class="w-full max-w-5xl mx-auto px-6 lg:px-10">
+      <div class="bg-primary-600 dark:bg-primary-700 rounded-3xl shadow-2xl shadow-primary-500/20 overflow-hidden">
+        <div class="grid grid-cols-12">
+          <!-- Text -->
+          <div class="col-span-12 lg:col-span-6 flex items-center p-10 lg:p-16">
+            <div class="font-sans space-y-6">
+              <h2 class="text-3xl lg:text-4xl font-heading font-medium text-white leading-snug">
+                ¿Estás listo?
+              </h2>
+              <p class="text-lg text-white/80 leading-relaxed">
+                Agenda tu cita con uno de nuestros profesionales y da el primer
+                paso hacia una mejor salud.
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center gap-2 bg-white text-primary-600 hover:bg-primary-50 font-sans font-semibold text-sm px-8 py-4 rounded-xl shadow-lg transition-colors duration-300"
+              >
+                Agendar cita
+                <iconify-icon class="iconify w-4 h-4" icon="lucide:calendar"></iconify-icon>
+              </a>
+            </div>
+          </div>
+          <!-- Image -->
+          <div class="col-span-12 lg:col-span-6 relative min-h-[200px] lg:min-h-0">
+            <img
+              src="/img/screens/doctors-dark.png"
+              alt="Agenda tu cita"
+              class="w-full h-full object-cover lg:absolute inset-0"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

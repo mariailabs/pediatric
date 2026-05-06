@@ -1,0 +1,94 @@
+---
+import Layout from "@layouts/Default.astro";
+
+const documentos = [
+  {
+    titulo: "Estado de Situación Financiera",
+    descripcion: "Vigencia 2025 — Firmado al 31.12.2025",
+    href: "/documentos/estado-situacion-financiera-2025.pdf",
+    icon: "ph:file-text-duotone",
+  },
+  {
+    titulo: "Estado de Resultados Integrales",
+    descripcion: "Vigencia 2025 — Firmado al 31.12.2025",
+    href: "/documentos/estado-resultados-integrales-2025.pdf",
+    icon: "ph:chart-line-up-duotone",
+  },
+];
+---
+
+<Layout title="Transparencia">
+  <!-- ===================== HERO ===================== -->
+  <section class="relative w-full overflow-hidden bg-muted-100 dark:bg-muted-1000 pt-32 pb-12 md:pt-40 md:pb-20">
+    <div class="w-full max-w-5xl mx-auto px-6 lg:px-10 text-center">
+      <div class="inline-flex items-center justify-center gap-2 mb-4">
+        <iconify-icon class="iconify text-2xl text-primary-500" icon="ph:scales-duotone"></iconify-icon>
+        <span class="font-sans text-sm font-semibold tracking-widest uppercase text-primary-500">
+          Transparencia
+        </span>
+      </div>
+      <h1 class="font-heading font-medium text-3xl sm:text-4xl lg:text-5xl text-muted-800 dark:text-white leading-tight">
+        Estados Financieros <span class="text-primary-500">2025</span>
+      </h1>
+      <p class="font-sans text-base sm:text-lg text-muted-500 dark:text-muted-400 max-w-3xl mx-auto mt-6 leading-relaxed">
+        En cumplimiento de lo dispuesto por la normatividad vigente y las
+        directrices de la Superintendencia Nacional de Salud, la IPS PEDIATRIC
+        informa que se encuentran publicados los estados financieros
+        correspondientes a la vigencia 2025, disponibles para consulta pública.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== DOCUMENTS ===================== -->
+  <section class="py-12 md:py-20 bg-white dark:bg-muted-900">
+    <div class="w-full max-w-5xl mx-auto px-6 lg:px-10">
+      <div class="text-center max-w-2xl mx-auto mb-10 md:mb-14 space-y-3">
+        <h4 class="font-sans font-semibold text-xs tracking-widest uppercase text-primary-500">
+          Documentos disponibles
+        </h4>
+        <h2 class="font-heading font-medium text-2xl sm:text-3xl md:text-4xl text-muted-800 dark:text-white">
+          Consulta y descarga los informes
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        {documentos.map((doc) => (
+          <a
+            href={doc.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group bg-white dark:bg-muted-800 rounded-2xl p-5 sm:p-6 border border-muted-100 dark:border-muted-700 hover:border-primary-200 dark:hover:border-primary-700 hover:shadow-lg hover:shadow-primary-500/10 transition-all duration-300 flex flex-col gap-4"
+          >
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-100 dark:group-hover:bg-primary-900/50 transition-colors duration-300">
+                <iconify-icon class="iconify text-2xl text-primary-500" icon={doc.icon}></iconify-icon>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h3 class="font-heading font-semibold text-base sm:text-lg text-muted-800 dark:text-white">
+                  {doc.titulo}
+                </h3>
+                <p class="font-sans text-sm text-muted-500 dark:text-muted-400 mt-1">
+                  {doc.descripcion}
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-muted-100 dark:border-muted-700">
+              <span class="inline-flex items-center gap-2 font-sans text-xs font-medium uppercase tracking-wider text-muted-400">
+                <iconify-icon class="iconify w-4 h-4" icon="ph:file-pdf-duotone"></iconify-icon>
+                PDF
+              </span>
+              <span class="inline-flex items-center gap-2 text-primary-500 group-hover:text-primary-600 font-sans font-medium text-sm transition-colors duration-300">
+                Descargar
+                <iconify-icon class="iconify w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" icon="lucide:download"></iconify-icon>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <p class="font-sans text-xs text-muted-400 text-center mt-10">
+        IPS PEDIATRIC — Información publicada en cumplimiento de la normatividad de la Superintendencia Nacional de Salud.
+      </p>
+    </div>
+  </section>
+</Layout>
